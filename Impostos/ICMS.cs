@@ -1,4 +1,6 @@
-﻿namespace CursoDesignPatterns
+﻿using CursoDesignPatterns.Models;
+
+namespace CursoDesignPatterns.Impostos
 {
     public class ICMS : IImposto
     {
