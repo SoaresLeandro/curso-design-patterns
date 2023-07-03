@@ -4,6 +4,7 @@ namespace CursoDesignPatterns.Impostos
 {
     public class ICKV : TemplateImpostoCondicional
     {
+        public ICKV() { }
         public override bool DeveUsarATaxacaoMaxima(Orcamento orcamento) => orcamento.Valor > 500 && TemItemMaiorQue100Reais(orcamento);
 
         public override double TaxacaoMaxima(Orcamento orcamento) => orcamento.Valor * 0.10;

@@ -12,11 +12,11 @@ orcamento.Itens.Add(new Item("Lampada", 20));
 orcamento.Valor = orcamento.Itens.Sum(i => i.Preco);
 
 CalculadorDeImpostos calculadorDeImpostos = new CalculadorDeImpostos();
-
+calculadorDeImpostos.Calcular(orcamento, new ISS(new ICMS()));
 //calculadorDeImpostos.Calcular(orcamento, new ICMS());
-//calculadorDeImpostos.Calcular(orcamento, new ISS());
-calculadorDeImpostos.Calcular(orcamento, new ICPP());
-calculadorDeImpostos.Calcular(orcamento, new ICKV());
+
+//calculadorDeImpostos.Calcular(orcamento, new ICPP());
+//calculadorDeImpostos.Calcular(orcamento, new ICKV());
 
 //Console.WriteLine("********** Desconto **********");
 //Console.WriteLine($"Total do Orçamento: {orcamento.Valor}");
