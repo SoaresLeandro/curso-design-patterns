@@ -4,12 +4,13 @@ namespace CursoDesignPatterns.Impostos
 {
     public class ICKV : TemplateImpostoCondicional
     {
+        public ICKV(Imposto outroImposto) : base(outroImposto) { }
         public ICKV() { }
         public override bool DeveUsarATaxacaoMaxima(Orcamento orcamento) => orcamento.Valor > 500 && TemItemMaiorQue100Reais(orcamento);
 
-        public override double TaxacaoMaxima(Orcamento orcamento) => orcamento.Valor * 0.10;
+        public override double TaxacaoMaxima(Orcamento orcamento) => orcamento.Valor * 0.10 + CalculoDoOutroImposto(orcamento);
 
-        public override double TaxacaoMinima(Orcamento orcamento) => orcamento.Valor * 0.06;
+        public override double TaxacaoMinima(Orcamento orcamento) => orcamento.Valor * 0.06 + CalculoDoOutroImposto(orcamento);
 
         private bool TemItemMaiorQue100Reais(Orcamento orcamento) => orcamento.Itens.Any(i => i.Preco > 100);
     }

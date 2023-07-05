@@ -11,8 +11,18 @@ orcamento.Itens.Add(new Item("Lapis", 2));
 orcamento.Itens.Add(new Item("Lampada", 20));
 orcamento.Valor = orcamento.Itens.Sum(i => i.Preco);
 
-CalculadorDeImpostos calculadorDeImpostos = new CalculadorDeImpostos();
-calculadorDeImpostos.Calcular(orcamento, new ISS(new ICMS()));
+Console.WriteLine(orcamento.Valor);
+//CalculadorDeImpostos calculadorDeImpostos = new CalculadorDeImpostos();
+//calculadorDeImpostos.Calcular(orcamento, new ImpostoMuitoAlto(new ICMS()));
+
+orcamento.AplicaDescontoExtra();
+Console.WriteLine(orcamento.Valor);
+orcamento.Aprova();
+orcamento.AplicaDescontoExtra();
+Console.WriteLine(orcamento.Valor);
+orcamento.Finaliza();
+orcamento.AplicaDescontoExtra();
+//calculadorDeImpostos.Calcular(orcamento, new ISS(new ICMS()));
 //calculadorDeImpostos.Calcular(orcamento, new ICMS());
 
 //calculadorDeImpostos.Calcular(orcamento, new ICPP());
